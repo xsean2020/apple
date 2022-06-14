@@ -1,0 +1,15 @@
+package idtoken
+
+import (
+	"context"
+	"testing"
+)
+
+func Test_Validate(t *testing.T) {
+	idToken := "eyJraWQiOiJXNldjT0tCIiwiYWxnIjoiUlMyNTYifQ.eyJpc3MiOiJodHRwczovL2FwcGxlaWQuYXBwbGUuY29tIiwiYXVkIjoiZnVuLnplbmNhdC5ldGVybmFsZW1iZXIiLCJleHAiOjE2NTUyNTg4MjcsImlhdCI6MTY1NTE3MjQyNywic3ViIjoiMDAxMzA0LjljZjg3OWIxYmYyZDRhODM5N2E4MTk2Mzc1MDlhNGU1LjAyMDciLCJjX2hhc2giOiJCRFlfVklWdVFHQ0NJT0haeWFLWERRIiwiYXV0aF90aW1lIjoxNjU1MTcyNDI3LCJub25jZV9zdXBwb3J0ZWQiOnRydWUsInJlYWxfdXNlcl9zdGF0dXMiOjJ9.BKfL6qZvGKkDtnJ-h7XNNEbeDoh3tHObNm76OfUxWycSmq8nP972cSNsVy9042Ifuh3goNiSeH2uwdaGBOuvYYy4TOzpMJNjMZk04D2_cdLdK7wl5bkjTEqKKp1Eo_RXJQRMkeOTHvitTnTQ2W7JM7-5aL5SZhB7mSvSEH6bSnrD4qzJUEx50BIILDAKouXVdjHG7cEzMuNEvvy4d8xIfWfJQ5_04dDhMTiklpMIYLPwHdLkIBEwa4DSrHkcqwEsfzQ16brcO0SMRE2igbcfd_q1z5jOL2eSZkUxw5ntU_VDMTtag5kY8t0gIYB7I-1J-rxd_hyynouW04RXfV9SZw"
+	resp, err := Validate(context.TODO(), idToken, "")
+	if err != nil {
+		t.Fatal(err)
+	}
+	t.Log(resp.Identify())
+}
