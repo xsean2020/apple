@@ -9,3 +9,4 @@ checkErr(err)
 log.Println(paload.Identify())
 
 ```
+# Apple iap validate
